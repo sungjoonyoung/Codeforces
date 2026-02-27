@@ -1,0 +1,40 @@
+#include<iostream>
+#include<utility>
+#include<vector>
+#include<algorithm>
+#include<cmath>
+#include<queue>
+#define ll long long
+#define pii pair<int,int>
+#define pll pair<ll,ll>
+#define vi vector<int>
+#define vl vector<ll>
+#define all(v) (v).begin(), (v).end()
+#define rall(v) (v).rbegin(), (v).rend()
+#define minpq(type) priority_queue<type, vector<type>, greater<type>>
+#define maxpq(type) priority_queue<type>
+using namespace std;
+void solve(void) {
+    int S,K,M;cin>>S>>K>>M;
+    if(K<S){
+        int tmp=M%(K*2);
+        if(tmp<K){
+            cout<<S-tmp<<"\n";
+        }
+        else{
+            cout<<K-(tmp-K)<<"\n";
+        }
+    }
+    else{
+        int tmp=M%K;
+        if(tmp<S)cout<<S-tmp<<"\n";
+        else cout<<0<<"\n";
+    }
+}
+int main(void) {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int T=1;
+    cin>>T;
+    while(T--)solve();
+}
